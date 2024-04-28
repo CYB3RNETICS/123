@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Winds</title>
+        <style>
+            body {
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+            }
+            #WindsTitle {
+                text-align: center;
+                margin-top: 100px; /* Adjust this value to position the title vertically */
+                font-size: 72px; /* Adjust this value to change the font size */
+            }
+            #Scores {
+                text-align: center; 
+                margin-top: 50px;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+            #lastscore {
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+            #highscore {
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+            #Buttonss {
+                text-align: center;
+            }
+
+            .button {
+                display: inline-block;
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                text-align: center;
+                font-size: 20px;
+                padding: 15px 32px;
+                margin: 10px;
+                cursor: pointer;
+                border-radius: 10px;
+                text-decoration: none;
+            }
+            .button:hover {
+                background-color: #45a049;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div id="WindsTitle">
+            <h1>Winds</h1>
+        </div>
+        <div id="Scores">
+            <h2>Scores</h2>
+            <p id="highscore"></p>
+            <p id="lastscore"></p>
+        </div>
+
+        <!-- Buttons -->
+        <div id="Buttonss">
+            <button class="button" onclick="Tutorial()">Tutorial</button>
+            <button class="button" onclick="Play()">Play</button>
+        </div>
+        
+        <script>
+            // getting the scores 
+            let highestScore = localStorage.getItem("HighestScore")
+            let lastScore = localStorage.getItem("LastScore")
+            
+            if (highestScore) {
+                document.getElementById("highscore").innerText = "Highest Score: " + highestScore
+            } 
+            else {
+                document.getElementById("highscore").innerText = "No high score yet."
+            }
+            if (lastScore) {
+                document.getElementById("lastscore").innerText = "Score: " + lastScore
+            } 
+            else {
+                document.getElementById("lastscore").innerText = "No Last Score"
+            }
+
+            function Play() {
+                window.location.href='Winds.html'
+            }
+            function Tutorial() {
+                window.location.href='Tutorial.html'
+            }
+        </script>
+    </body>
+</html>
